@@ -2,4 +2,4 @@
 
 `npm install`
 
-`npm install babel webpack webpack-dev-server -g`
+`sudo npm install babel webpack webpack-dev-server -g`
