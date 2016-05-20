@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchBooks } from '../actions/MyBooksActions';
+import { fetchBooks, toggleBookIsRead } from '../actions/MyBooksActions';
 
 import Navbar from './Navbar';
 import BookContainer from './BookContainer'
@@ -13,9 +13,8 @@ class App extends React.Component{
 	}
 
 	render() {
-		const { searchString, books, isFetching, initSpinner } = this.props;
+		const { searchString, books, isFetching, initSpinner, dispatchBookIsReadClick } = this.props;
 		const spinnerStyle = { display: isFetching ? 'block' : 'none' };
-
 		return(
 			<div>
 				<Navbar  />
@@ -26,7 +25,7 @@ class App extends React.Component{
 						</svg>
 					</div>
 				</div>
-				<BookContainer books={books} searchString={searchString} />
+				<BookContainer books={books} searchString={searchString} onBookIsReadClick={dispatchBookIsReadClick} />
 			</div>
 		);
 	}
@@ -42,6 +41,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
 	dispatchFetchBooks: () => {
 		dispatch(fetchBooks());
+	},
+	dispatchBookIsReadClick: (id) => {
+		dispatch(toggleBookIsRead(id));
 	}
 })
 

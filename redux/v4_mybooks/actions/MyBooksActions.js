@@ -36,3 +36,14 @@ export var addBook = function(book) {
     }
   }
 };
+
+// es5
+export var TOGGLE_BOOK_IS_READ = 'TOGGLE_BOOK_IS_READ';
+export var toggleBookIsRead = function(id) {
+  return {
+    type: TOGGLE_BOOK_IS_READ,
+    payload: {
+      id: id
+    }
+  }
+};
