@@ -5,7 +5,8 @@ import update from 'react-addons-update';
 import { SET_NAVBAR_DATA } from '../actions/NavbarActions';
 
 const initialState = {
-  searchString: ''
+  searchString: '',
+  displayAll: true,
 };
 
 export const navbar = (state = initialState, action) => {

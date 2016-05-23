@@ -13,11 +13,11 @@ class App extends React.Component{
 	}
 
 	render() {
-		const { searchString, books, isFetching, initSpinner, dispatchBookIsReadClick } = this.props;
+		const { searchString, books, isFetching, initSpinner, dispatchBookIsReadClick, displayAll } = this.props;
 		const spinnerStyle = { display: isFetching ? 'block' : 'none' };
 		return(
 			<div>
-				<Navbar  />
+				<Navbar displayAll={displayAll} />
 				<div style={spinnerStyle} className={`ibm-spinner-container ${initSpinner ? 'init-spin' : 'end-spin'}`}>
 					<div className="ibm-spinner">
 						<svg width="150" height="150" viewBox="-75 -75 150 150">
@@ -25,7 +25,7 @@ class App extends React.Component{
 						</svg>
 					</div>
 				</div>
-				<BookContainer books={books} searchString={searchString} onBookIsReadClick={dispatchBookIsReadClick} />
+				<BookContainer books={books} searchString={searchString} onBookIsReadClick={dispatchBookIsReadClick} displayAll={displayAll} />
 			</div>
 		);
 	}
@@ -36,6 +36,7 @@ const mapStateToProps = (state) => ({
 	isFetching: state.myBooks.isFetching,
 	initSpinner: state.myBooks.initSpinner,
 	searchString: state.navbar.searchString,
+	displayAll: state.navbar.displayAll
 });
 
 const mapDispatchToProps = (dispatch) => ({

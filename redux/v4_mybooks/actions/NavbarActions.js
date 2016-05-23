@@ -8,3 +8,4 @@ export const setData = (property, data) => ({
 });
 
 export const setSearchString = (searchString) => setData('searchString', searchString);
+export const swithDisplayAll = (value) => setData('displayAll', value);

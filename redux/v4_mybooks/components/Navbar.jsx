@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { setSearchString } from '../actions/NavbarActions';
+import { setSearchString, swithDisplayAll } from '../actions/NavbarActions';
 
 class Navbar extends Component {
 
@@ -17,8 +17,8 @@ class Navbar extends Component {
 			            <div className="panel-body">
 			                <div className="row">
 			                    <div className="col-xs-1">
-			                        <button type="button" className="btn btn-default navbar-btn" >
-			                            <span className={"glyphicon glyphicon-"+ ((this.props.displayAll) ? "globe" : "unchecked")}></span>
+			                        <button type="button" className="btn btn-default navbar-btn" onClick={this.props.dispatchDisplayAll.bind(null, !this.props.displayAll)}>
+			                            <span className={"glyphicon glyphicon-"+ ((this.props.displayAll) ? "globe" : "unchecked")} ></span>
 			                        </button>
 			                    </div>
 			                    <div className="col-xs-11">
@@ -39,6 +39,9 @@ class Navbar extends Component {
 const mapDispatchToProps = (dispatch) => ({
 	onInputChange: (value) => {
 		dispatch(setSearchString(value));
+	},
+	dispatchDisplayAll: (value) => {
+		dispatch(swithDisplayAll(value));
 	}
 });
 
