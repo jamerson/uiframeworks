@@ -12,65 +12,6 @@
 </nav>
 
 <!-- Component: FilterBar -->
-<div class="panel panel-default mybooks-mainpanel">
-    <div class="panel-body mybooks-mainpanelbody">
+{{filter-bar}}
 
-    <div class="panel panel-default mybooks-filterpanel">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-xs-1">
-              {{#link-to 'add' tagName='button' class="btn btn-default navbar-btn"}}
-                <span class="glyphicon glyphicon-plus"></span>
-              {{/link-to}}
-            </div>
-            <div class="col-xs-11">
-              <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search...">
-                <span class="input-group-addon glyphicon glyphicon-search"></span>
-            </div>
-            </div>
-          </div>
-        </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- Component: BookList -->
-<div class="row">
-  <!-- Component: Book -->
-  <div class="col-md-6 col-sm-12">
-    <div class="panel panel-default mybooks-bookpanel">
-      <div class="panel-body">
-        <div class="col-xs-12 col-sm-3">
-          <center><img src="images/got.jpg" class="img-responsive"/></center>
-        </div>
-        <div class="col-xs-12 col-sm-7 col-md-9 col-lg-7">
-          <h3><strong>Game of Thrones</strong></h3>
-          <small><i>George Martin</i></small><br>
-          Here is the first volume in George R. R. Martin’s magnificent cycle of novels that includes A Clash of Kings and A Storm of Swords.
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-12 col-lg-2">
-          <input type="checkbox" /> J&aacute; Li<br>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6 col-sm-12">
-    <div class="panel panel-default mybooks-bookpanel">
-      <div class="panel-body">
-        <div class="col-xs-12 col-sm-3">
-          <center><img src="images/lotr.jpg" class="img-responsive"/></center>
-        </div>
-        <div class="col-xs-12 col-sm-7 col-md-9 col-lg-7">
-          <h3><strong>The Lord of the Rings</strong></h3>
-          <small><i>J.R.R. Tolkien</i></small><br>
-          In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others.
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-12 col-lg-2">
-          <input type="checkbox" /> J&aacute; Li<br>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+{{#book-list}}
