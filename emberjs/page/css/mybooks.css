@@ -1,0 +1,32 @@
+.mybooks-container-fluid {
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+.mybooks-mainpanel {
+	margin-top: 56px;
+	box-shadow: initial !important;
+	border: 0;
+}
+
+.mybooks-mainpanelbody {
+	padding: 0;
+}
+
+.mybooks-filterpanel {
+	margin-top: 1px;
+}
+
+.mybooks-bookpanel {
+	margin-left:5px;
+	margin-right:5px;
+}
+
+.mybooks-jali{
+	text-decoration: line-through;
+	color: grey;
+}
+
+.mybooks-loading{
+	text-align: center;
+}

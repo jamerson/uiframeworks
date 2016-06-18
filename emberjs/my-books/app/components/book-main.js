@@ -5,8 +5,9 @@ export default Ember.Component.extend({
   filterCriteria: "",
 
   actions: {
-    isReadChangedMain() {
+    isReadChanged(book) {
       console.log('action from bookMain');
+      this.get('isReadChanged')(book);
     }
   }
 });

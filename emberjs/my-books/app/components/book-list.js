@@ -5,14 +5,14 @@ export default Ember.Component.extend({
   filteredBooks: Ember.computed('filterCriteria', 'books', function() {
     var filterCriteria = this.get('filterCriteria');
     return this.get('books').filter(function(item) {
-      return item.title.toUpperCase().indexOf(filterCriteria.toUpperCase()) !== -1;
+      return item.get('title').toUpperCase().indexOf(filterCriteria.toUpperCase()) !== -1;
     });
   }),
 
   actions: {
-    isReadChanged() {
+    isReadChanged(book) {
       console.log('action from bookList');
-      this.get('isReadChangedList')();
+      this.get('isReadChanged')(book);
     }
   }
 

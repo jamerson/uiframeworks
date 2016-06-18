@@ -1,7 +1,7 @@
 <!-- Component: BookList -->
 <div class="row">
   {{#each filteredBooks as |book|}}
-    {{book-card image=book.image title=book.title author=book.author description=book.description isReadChanged=(action 'isReadChanged')}}
+    {{book-card book=book isReadChanged=(action 'isReadChanged')}}
   {{/each}}
 
 </div>

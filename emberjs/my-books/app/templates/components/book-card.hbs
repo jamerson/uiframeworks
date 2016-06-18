@@ -2,15 +2,15 @@
   <div class="panel panel-default mybooks-bookpanel">
     <div class="panel-body">
       <div class="col-xs-12 col-sm-3">
-        <center><img src="images/{{image}}" class="img-responsive"/></center>
+        <center><img src="images/{{book.image}}" class="img-responsive"/></center>
       </div>
       <div class="col-xs-12 col-sm-7 col-md-9 col-lg-7">
-        <h3><strong>{{title}}</strong></h3>
-        <small><i>{{author}}</i></small><br>
-        {{description}}
+        <h3><strong>{{book.title}}</strong></h3>
+        <small><i>{{book.author}}</i></small><br>
+        {{book.description}}
       </div>
       <div class="col-xs-12 col-sm-2 col-md-12 col-lg-2">
-        {{input type="checkbox" checked=isRead}} J&aacute; Li
+        {{input type="checkbox" checked=book.isRead}} J&aacute; Li
       </div>
     </div>
   </div>
